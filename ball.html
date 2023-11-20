@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce</title>
+    <style>
+        .floor {
+            background-color: gray;
+            width: 80%;
+            height: 200px;
+            transform: perspective(500px) rotateX(45deg);
+            align-self: flex-end;
+            margin-bottom: -50px;
+            
+        }
+        .main {
+            height: 700px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .ball {
+            /* background-image: url(/ball.png);
+            background-size: contain;
+            background-repeat: no-repeat; */
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            z-index: 10;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            animation: rotation 1s infinite linear;
+            box-shadow: inset 0px 20px 10px rgba(0, 0, 0, 0.9);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .ball {
+            animation: bounce 6s infinite linear, move 6s linear infinite;
+        }
+        .shadow {
+            position: relative;
+            background-color: transparent;
+            width: 100px;
+            height: 100px;
+            bottom: 105px;
+            box-shadow: inset 0px -15px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        @keyframes bounce {
+            0% {bottom: 100%;}
+            10% { box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);}
+            18% {
+                bottom: 0;
+            }
+            20% {
+                bottom: 0;
+                box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.5);
+            }
+            22% {
+                bottom: 0;
+            }
+            30% {
+                box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);
+            }
+            35% {
+                bottom: 50%;
+            }
+            40% {
+                box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);
+            }
+            48% {
+                bottom: 0;
+            }
+            50% {
+                bottom: 0;
+                box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.5);
+            }
+            52% {
+                bottom: 0;
+            }
+            60% {
+                bottom: 38%;
+                box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);
+            }
+            69% {
+                bottom: 0;
+            }
+            70% {
+                bottom: 0;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+            }
+            71% {
+                bottom: 0;
+            }
+            77% {
+                bottom: 22%;
+                box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);
+            }
+            81% {
+                bottom: 0;
+            }
+            84% {
+                bottom: 0;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+            }
+            85% {
+                bottom: 0;
+            }
+            91% {
+                bottom: 15%;
+                box-shadow: 0px 200px 50px rgba(0, 0, 0, 0.0);
+            }
+            96% {
+                bottom: 0%;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                bottom: 0%;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+            }
+
+        }
+            
+        @keyframes rotation {
+            0% {
+            transform:rotate(0deg);
+            }
+            100% {
+            transform:rotate(360deg);
+            }
+        }
+        @keyframes move {
+            from {left: 0;}
+            to   {left: 1000px;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="ball">
+            <img src="/ball.png" alt="">
+            <div class="shadow"></div>
+        </div>
+        <div class="floor"></div>
+    </div>
+</body>
+</html>
